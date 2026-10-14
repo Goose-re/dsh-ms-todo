@@ -1,0 +1,20 @@
+# 凭据 —— 永远不进 git。
+# auth.json 里有 refresh_token，拿到它就等于拿到这个账号的 To Do / 日历读写权。
+# refresh token 不绑机器，所以"反正只有我自己看"不成立。
+# 换机时不要复制它，重新跑 login.mjs 授权（2 分钟）。
+auth.json
+devicecode.json
+
+# 个人数据 —— 追踪状态和计划记录。
+# 里面有你的项目名、待办标题、每天怎么排的时间线。
+# 走 MIGRATION.md 里的 data/ 层手工搬，不进公开仓库。
+state.json
+plans/
+
+# 可重新生成的缓存（1.8 MB 的 Graph CSDL，schema-check.mjs 会自己拉）
+graph-metadata.xml
+
+# 杂项
+*.bak
+*.bak-*
+*.log

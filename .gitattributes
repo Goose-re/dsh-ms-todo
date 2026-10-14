@@ -1,0 +1,9 @@
+# 换行符必须钉死。
+#
+# check-skill.mjs 有一条断言是"SKILL.md 只能有 LF，不能有 CR"。Windows 上 git 默认
+# core.autocrlf=true 会在 checkout 时把 LF 转成 CRLF —— 那样 clone 到新机器后
+# 这条断言会直接挂，而症状看起来像"技能文件坏了"，很难查到是 git 干的。
+* text=auto eol=lf
+
+# PowerShell 脚本给 CRLF，符合 Windows 习惯（.mjs / .md 仍然是 LF）
+*.ps1 text eol=crlf
